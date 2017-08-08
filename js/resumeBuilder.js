@@ -24,7 +24,7 @@ var skills=["Web Developer","Teaching"];
  		"github": "https://github.com/mirupandey",
  		"location": "Rawatbhata",
  	},
- 	"biopic": "images/fry.jpg",
+ 	"biopic": "images/biopic.jpg",
  	"welcomeMessage": "Welcome Here",
  	"skill": skills,
  	"display":
@@ -182,7 +182,7 @@ var project ={
 			"title": "Dream Home Architecture",
 			"dates": "20-July-2016",
 			"description": "The architecture firm focusing website visualizes the fields covered by a basic architecture firm.",
-			"images": "images/fry.jpg"
+			"images": "images/DreamHome.png"
 		},
 		{
 			"title": "Hostel Management",
@@ -221,8 +221,6 @@ function inName(name){
 	var name = firstName + " " + lastName;
 	return name;
 }
-
-project.display();
 
 $("#mapDiv").append(googleMap);
     //  new google.maps.Map(document.querySelector('#map'), mapOptions);
