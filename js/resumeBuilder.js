@@ -218,8 +218,8 @@ function inName(name){
 	var nameSplit = name.trim().split(" ");
 	var firstName = nameSplit[0].slice(0,1).toUpperCase() + nameSplit[0].slice(1).toLowerCase();
 	var lastName = nameSplit[1].toUpperCase();
-	var name = firstName + " " + lastName;
-	return name;
+	var fullName = firstName + " " + lastName;
+	return fullName;
 }
 
 $("#mapDiv").append(googleMap);
