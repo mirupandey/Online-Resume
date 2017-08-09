@@ -193,21 +193,21 @@ var projects ={
 	],
 	display:
 	function(){
-	for(index=0;index<projects.projects.length;index++){
+		for(index=0;index<projects.projects.length;index++){
 
-		$("#projects").append(HTMLprojectStart);
+			$("#projects").append(HTMLprojectStart);
 
-		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[index].title);
-		var formattedDate = HTMLprojectDates.replace("%data%", projects.projects[index].dates);
-		var formattedDesc = HTMLprojectDescription.replace("%data%", projects.projects[index].description);
-		for (j = 0; j < projects.projects[index].images.length; j++) {
-    		// format and append image
-			var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[index].images[j]);
-		}
-		$(".project-entry:last").append(formattedTitle);
-		$(".project-entry:last").append(formattedDate);
-		$(".project-entry:last").append(formattedDesc);
-		$(".project-entry:last").append(formattedImage);
+			var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[index].title);
+			var formattedDate = HTMLprojectDates.replace("%data%", projects.projects[index].dates);
+			var formattedDesc = HTMLprojectDescription.replace("%data%", projects.projects[index].description);
+			$(".project-entry:last").append(formattedTitle);
+			$(".project-entry:last").append(formattedDate);
+			$(".project-entry:last").append(formattedDesc);
+			for (j = 0; j < projects.projects[index].images.length; j++) {
+	    		// format and append image
+				var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[index].images[j]);
+				$(".project-entry:last").append(formattedImage);
+			}
 		}
 	}
 
