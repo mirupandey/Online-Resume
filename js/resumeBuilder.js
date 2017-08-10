@@ -28,19 +28,16 @@ var skills=["Web Developer","Teaching"];
  	"welcomeMessage": "Welcome Here",
  	"skills": skills,
  	"display":
- 		function displayWork(){
+ 		function(){
 		 	var myName = HTMLheaderName.replace("%data%", bio.name);
-			$("#topContacts, #footerContacts").append(myName);
+			$("#header").append(myName);
 			var myRole = HTMLheaderRole.replace("%data%", bio.role);
 			$("#topContacts, #footerContacts").append(myRole);
 			var contactInfo = HTMLmobile.replace("%data%", bio.contacts.mobile);
-			$("#topContacts, #footerContacts").append(contactInfo);
 			var github = HTMLgithub.replace("%data%", bio.contacts.github);
-			$("#topContacts, #footerContacts").append(github);
 			var location = HTMLlocation.replace("%data%", bio.contacts.location);
-			$("#topContacts, #footerContacts").append(location);
 			var email = HTMLemail.replace("%data%", bio.contacts.email);
-			$("#topContacts, #footerContacts").append(email);
+			$("#topContacts, #footerContacts").append(contactInfo,github,location,email);
 			if(bio.skills.length > 0) {
 				for(var i=0;i<bio.skills.length;i++){
 					$("#header").append(HTMLskillsStart);
@@ -103,7 +100,7 @@ var education = {
 	],
 	display:
 	function(){
-		for(index=0;index<education.schools.length;index++){
+		for(var index=0;index<education.schools.length;index++){
 
 			$("#education").append(HTMLschoolStart);
 
@@ -118,7 +115,7 @@ var education = {
 			$(".education-entry:last").append(formattedLocation);
 			$(".education-entry:last").append(formattedMajor);
 		}
-		for(index=0;index<education.onlineCourses.length;index++){
+		for(var index=0;index<education.onlineCourses.length;index++){
 
 			$("#onlineCourses").append(HTMLonlineClasses);
 
@@ -213,7 +210,7 @@ var projects ={
 
 };
 
-project.display();
+projects.display();
 
 $("#main").append(internationalizeButton);
 
