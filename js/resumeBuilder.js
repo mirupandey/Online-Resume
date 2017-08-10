@@ -115,14 +115,14 @@ var education = {
 			$(".education-entry:last").append(formattedLocation);
 			$(".education-entry:last").append(formattedMajor);
 		}
-		for(var index=0;index<education.onlineCourses.length;index++){
+		for(var id=0;id<education.onlineCourses.length;id++){
 
 			$("#onlineCourses").append(HTMLonlineClasses);
 
-			var formattedName1 = HTMLonlineTitle.replace("%data%", education.onlineCourses[index].title);
-			var formattedSchool1 = HTMLonlineSchool.replace("%data%", education.onlineCourses[index].school);
-			var formattedDates1 = HTMLonlineDates.replace("%data%", education.onlineCourses[index].dates);
-			var formattedURL1 = HTMLonlineURL.replace("%data%", education.onlineCourses[index].url);
+			var formattedName1 = HTMLonlineTitle.replace("%data%", education.onlineCourses[id].title);
+			var formattedSchool1 = HTMLonlineSchool.replace("%data%", education.onlineCourses[id].school);
+			var formattedDates1 = HTMLonlineDates.replace("%data%", education.onlineCourses[id].dates);
+			var formattedURL1 = HTMLonlineURL.replace("%data%", education.onlineCourses[id].url);
 			$(".onlineCourses-entry:last").append(formattedName1);
 			$(".onlineCourses-entry:last").append(formattedSchool1);
 			$(".onlineCourses-entry:last").append(formattedDates1);
