@@ -26,8 +26,8 @@ This is empty on purpose! Your code to build the resume will go here.
 			$("#topContacts, #footerContacts").append(myRole);
 			$("#topContacts, #footerContacts").append(contactInfo,github,location,email);
 			if(bio.skills.length > 0) {
+				$("#header").append(HTMLskillsStart);
 				for(var i=0;i<bio.skills.length;i++){
-					$("#header").append(HTMLskillsStart);
 					var formattedSkills = HTMLskills.replace("%data%",bio.skills[i]);
 					$("#skills").append(formattedSkills);
 				}
@@ -85,13 +85,16 @@ var education = {
 			var formattedName = HTMLschoolName.replace("%data%", education.schools[index].name),
 			formattedDates = HTMLschoolDates.replace("%data%", education.schools[index].dates),
 			formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[index].degree),
-			formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[index].location),
-			formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[index].majors);
+			formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[index].location);
+			
 			$(".education-entry:last").append(formattedName);
 			$(".education-entry:last").append(formattedDegree);
 			$(".education-entry:last").append(formattedDates);
 			$(".education-entry:last").append(formattedLocation);
-			$(".education-entry:last").append(formattedMajor);
+			for(var major=0; major<education.schools[index].majors.length;major++){
+				var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[index].majors[major]);
+				$(".education-entry:last").append(formattedMajor);
+			}
 		}
 		for(var id=0;id<education.onlineCourses.length;id++){
 
